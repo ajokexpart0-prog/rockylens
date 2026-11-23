@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RockyLens Studio — Photographer in Ilorin | Portraits, Products &amp; Events</title>
+    <meta
+      name="description"
+      content="RockyLens Studio provides on-location portrait, product, and event photography in Ilorin, Nigeria. Fair pricing, fast delivery, and clean creative direction."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="RockyLens Studio" />
+    <meta property="og:title" content="RockyLens Studio — Photographer in Ilorin | Portraits, Products &amp; Events" />
+    <meta
+      property="og:description"
+      content="On-location portrait, product, and event photography in Tanke, Ilorin. View our work, build your shoot package, and book via form or WhatsApp."
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="RockyLens Studio — Photographer in Ilorin" />
+    <meta
+      name="twitter:description"
+      content="On-location portrait, product, and event photography in Tanke, Ilorin, Nigeria. Frames That Command Attention."
+    />
+    <meta name="theme-color" content="#0B0B0C" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&display=swap"
+      rel="stylesheet"
+    />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "@id": "https://rockylensstudio.netlify.app/#business",
+        "name": "RockyLens Studio",
+        "description": "On-location portrait, product, and event photography service based in Tanke, Ilorin, Kwara State, Nigeria.",
+        "telephone": "+2349161959398",
+        "email": "ajokexpart0@gmail.com",
+        "priceRange": "₦3,000 - ₦250,000+",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Tanke, Ilorin",
+          "addressRegion": "Kwara State",
+          "addressCountry": "NG"
+        },
+        "areaServed": [
+          {
+            "@type": "City",
+            "name": "Ilorin"
+          },
+          {
+            "@type": "State",
+            "name": "Kwara State"
+          },
+          {
+            "@type": "Country",
+            "name": "Nigeria"
+          }
+        ],
+        "openingHoursSpecification": [
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": [
+              "Monday",
+              "Tuesday",
+              "Wednesday",
+              "Thursday",
+              "Friday",
+              "Saturday"
+            ],
+            "opens": "09:00",
+            "closes": "18:00"
+          }
+        ]
+      }
+    </script>
+  </head>
+  <body class="bg-[#0B0B0C] text-[#F5F1EA] antialiased selection:bg-[#C9A24B] selection:text-[#0B0B0C]">
+    <!-- Hidden static form for Netlify Forms build-time detection -->
+    <form
+      name="booking-enquiry"
+      method="POST"
+      data-netlify="true"
+      netlify-honeypot="bot-field"
+      action="/thank-you.html"
+      hidden
+    >
+      <input type="hidden" name="form-name" value="booking-enquiry" />
+      <input type="text" name="bot-field" />
+      <input type="text" name="full-name" />
+      <input type="email" name="email" />
+      <input type="tel" name="phone" />
+      <select name="service">
+        <option value="Portrait Photography">Portrait Photography</option>
+        <option value="Product Photography">Product Photography</option>
+        <option value="Event Photography">Event Photography</option>
+      </select>
+      <input type="text" name="package-quantity" />
+      <input type="date" name="preferred-date" />
+      <input type="text" name="shoot-location" />
+      <textarea name="project-details"></textarea>
+    </form>
+
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
