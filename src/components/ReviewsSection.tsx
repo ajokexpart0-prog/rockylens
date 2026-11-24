@@ -10,22 +10,22 @@ export const ReviewsSection: React.FC<ReviewsSectionProps> = ({ compact = false 
   return (
     <section
       aria-labelledby="reviews-heading"
-      className={compact ? 'py-14 border-t border-[#F5F1EA]/10' : 'py-20 sm:py-24'}
+      className={compact ? 'py-14 border-t border-[#130521]/10' : 'py-20 sm:py-24'}
     >
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <div className="mb-10 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
           <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#C9A24B]">
+            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#2E0854]">
               Client Feedback
             </p>
             <h2
               id="reviews-heading"
-              className="mt-2 font-display text-3xl font-semibold tracking-tight text-[#F5F1EA] sm:text-4xl text-balance"
+              className="mt-2 font-display text-3xl font-semibold tracking-tight text-[#130521] sm:text-4xl text-balance"
             >
               Trusted by clients across Ilorin
             </h2>
           </div>
-          <p className="text-sm text-[#F5F1EA]/65">
+          <p className="text-sm text-[#130521]/65">
             Five-star words from real sessions.
           </p>
         </div>
@@ -34,7 +34,7 @@ export const ReviewsSection: React.FC<ReviewsSectionProps> = ({ compact = false 
           {REVIEWS.map((review) => (
             <article
               key={review.name}
-              className="flex flex-col justify-between rounded-xl border border-[#F5F1EA]/10 bg-[#1A1A1D] p-6 transition-colors duration-150 hover:border-[#C9A24B]/40"
+              className="flex flex-col justify-between rounded-xl border border-[#130521]/10 bg-[#F0E9F8] p-6 transition-colors duration-150 hover:border-[#2E0854]/50"
             >
               <div>
                 <div
@@ -44,16 +44,16 @@ export const ReviewsSection: React.FC<ReviewsSectionProps> = ({ compact = false 
                   {Array.from({ length: 5 }).map((_, idx) => (
                     <Star
                       key={idx}
-                      className="h-4 w-4 fill-[#C9A24B] text-[#C9A24B]"
+                      className="h-4 w-4 fill-[#2E0854] text-[#2E0854]"
                       aria-hidden="true"
                     />
                   ))}
                 </div>
-                <p className="text-sm leading-relaxed text-[#F5F1EA]/85">
+                <p className="text-sm leading-relaxed text-[#130521]/85">
                   &ldquo;{review.text}&rdquo;
                 </p>
               </div>
-              <p className="mt-6 border-t border-[#F5F1EA]/10 pt-4 text-sm font-semibold text-[#F5F1EA]">
+              <p className="mt-6 border-t border-[#130521]/12 pt-4 text-sm font-semibold text-[#130521]">
                 {review.name}
               </p>
             </article>

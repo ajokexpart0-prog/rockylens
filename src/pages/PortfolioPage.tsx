@@ -22,7 +22,6 @@ const EVENT_SUB_TABS: EventFilter[] = [
   'Weddings',
   'Birthdays',
   'Corporate',
-  'Graduations',
 ];
 
 export const PortfolioPage: React.FC<PortfolioPageProps> = ({ onNavigate }) => {
@@ -41,7 +40,6 @@ export const PortfolioPage: React.FC<PortfolioPageProps> = ({ onNavigate }) => {
     });
   }, [activeGroup, activeEventSub]);
 
-  // Only real photos open inside the interactive image lightbox
   const lightboxItems = useMemo(
     () => filteredItems.filter((item) => !item.isPlaceholder && Boolean(item.src)),
     [filteredItems]
@@ -60,19 +58,19 @@ export const PortfolioPage: React.FC<PortfolioPageProps> = ({ onNavigate }) => {
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="max-w-2xl">
-          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#C9A24B]">
+          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#2E0854]">
             Portfolio
           </p>
-          <h1 className="mt-3 font-display text-4xl font-semibold text-[#F5F1EA] sm:text-5xl text-balance">
+          <h1 className="mt-3 font-display text-4xl font-semibold text-[#130521] sm:text-5xl text-balance">
             Selected frames across portraits, products, and events.
           </h1>
-          <p className="mt-4 text-sm leading-relaxed text-[#F5F1EA]/75 sm:text-base">
+          <p className="mt-4 text-sm leading-relaxed text-[#130521]/75 sm:text-base">
             Filter by category below and click any photograph to inspect it full screen. Use arrow keys or swipe left and right inside the viewer.
           </p>
         </div>
 
         {/* Filter Bar */}
-        <div className="mt-8 flex flex-col gap-3 border-y border-[#F5F1EA]/10 py-5">
+        <div className="mt-8 flex flex-col gap-3 border-y border-[#130521]/12 py-5">
           <div className="flex flex-wrap items-center justify-between gap-4">
             <div
               role="tablist"
@@ -94,8 +92,8 @@ export const PortfolioPage: React.FC<PortfolioPageProps> = ({ onNavigate }) => {
                     onClick={() => handlePrimaryTab(tab)}
                     className={`min-h-[42px] rounded-lg px-4 py-2 text-xs font-semibold transition-colors whitespace-nowrap ${
                       active
-                        ? 'bg-[#C9A24B] text-[#0B0B0C]'
-                        : 'border border-[#F5F1EA]/15 bg-[#1A1A1D] text-[#F5F1EA]/80 hover:border-[#C9A24B]/50 hover:text-[#F5F1EA]'
+                        ? 'bg-[#2E0854] text-white'
+                        : 'border border-[#130521]/15 bg-[#F0E9F8] text-[#130521]/80 hover:border-[#2E0854] hover:text-[#2E0854]'
                     }`}
                   >
                     {tab} <span className="ml-1 opacity-75 tabular-nums">({count})</span>
@@ -104,7 +102,7 @@ export const PortfolioPage: React.FC<PortfolioPageProps> = ({ onNavigate }) => {
               })}
             </div>
 
-            <p className="text-xs text-[#F5F1EA]/55 tabular-nums">
+            <p className="text-xs text-[#130521]/65 tabular-nums">
               Showing {filteredItems.length} of {PORTFOLIO_ITEMS.length} items
             </p>
           </div>
@@ -122,10 +120,10 @@ export const PortfolioPage: React.FC<PortfolioPageProps> = ({ onNavigate }) => {
                     key={sub}
                     type="button"
                     onClick={() => setActiveEventSub(sub)}
-                    className={`min-h-[36px] rounded-md px-3 py-1.5 text-xs font-medium transition-colors whitespace-nowrap ${
+                    className={`min-h-[36px] rounded-md px-3 py-1.5 text-xs font-semibold transition-colors whitespace-nowrap ${
                       active
-                        ? 'bg-[#F5F1EA] text-[#0B0B0C]'
-                        : 'border border-[#F5F1EA]/15 bg-[#0B0B0C] text-[#F5F1EA]/70 hover:text-[#F5F1EA]'
+                        ? 'bg-[#130521] text-white'
+                        : 'border border-[#130521]/15 bg-[#F0E9F8] text-[#130521]/80 hover:border-[#2E0854]'
                     }`}
                   >
                     {sub}
@@ -136,38 +134,38 @@ export const PortfolioPage: React.FC<PortfolioPageProps> = ({ onNavigate }) => {
           )}
         </div>
 
-        {/* Grid */}
-        <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        {/* Masonry-style editorial columns on desktop */}
+        <div className="mt-10 columns-1 gap-6 sm:columns-2 lg:columns-3">
           {filteredItems.map((item) => {
             const lbIdx = lightboxItems.findIndex((x) => x.id === item.id);
             return (
-              <PhotoFrame
-                key={item.id}
-                item={item}
-                aspectClass="aspect-[4/3]"
-                onClick={
-                  lbIdx >= 0 ? () => setLightboxIndex(lbIdx) : undefined
-                }
-              />
+              <div key={item.id} className="mb-6 break-inside-avoid">
+                <PhotoFrame
+                  item={item}
+                  onClick={
+                    lbIdx >= 0 ? () => setLightboxIndex(lbIdx) : undefined
+                  }
+                />
+              </div>
             );
           })}
         </div>
 
         {/* Booking CTA */}
-        <section className="mt-16 rounded-2xl border border-[#C9A24B]/30 bg-[#1A1A1D] p-8 sm:p-12">
+        <section className="mt-12 rounded-2xl border border-[#2E0854]/25 bg-[#F0E9F8] p-8 sm:p-12">
           <div className="flex flex-col items-start justify-between gap-6 lg:flex-row lg:items-center">
             <div className="max-w-xl">
-              <h2 className="font-display text-3xl font-semibold text-[#F5F1EA] text-balance">
+              <h2 className="font-display text-3xl font-semibold text-[#130521] text-balance">
                 Want coverage like this for your upcoming shoot?
               </h2>
-              <p className="mt-2 text-sm text-[#F5F1EA]/75">
+              <p className="mt-2 text-sm text-[#130521]/75">
                 Tell us what you are planning in Ilorin or beyond and we will confirm availability right away.
               </p>
             </div>
             <button
               type="button"
               onClick={() => onNavigate('/book')}
-              className="inline-flex min-h-[48px] items-center justify-center gap-2 rounded-lg bg-[#C9A24B] px-6 py-3 text-sm font-semibold text-[#0B0B0C] transition-opacity hover:opacity-90 whitespace-nowrap shrink-0"
+              className="inline-flex min-h-[48px] items-center justify-center gap-2 rounded-lg bg-[#2E0854] px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-[#1E043B] whitespace-nowrap shrink-0"
             >
               Book a Shoot
               <ArrowRight className="h-4 w-4" aria-hidden="true" />

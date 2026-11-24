@@ -13,7 +13,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
   };
 
   return (
-    <footer className="border-t border-[#F5F1EA]/10 bg-[#0B0B0C] text-[#F5F1EA]">
+    <footer className="border-t border-[#130521]/12 bg-[#F0E9F8] text-[#130521]">
       <div className="mx-auto max-w-6xl px-4 py-14 sm:px-6 lg:px-8">
         <div className="grid gap-10 md:grid-cols-12">
           {/* Brand & blurb */}
@@ -26,17 +26,17 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
             >
               <Logo />
             </a>
-            <p className="text-sm font-medium text-[#C9A24B]">
+            <p className="text-sm font-semibold text-[#2E0854]">
               {BUSINESS_INFO.tagline}
             </p>
-            <p className="max-w-sm text-sm leading-relaxed text-[#F5F1EA]/70">
+            <p className="max-w-sm text-sm leading-relaxed text-[#130521]/75">
               On-location portrait, product, and event photography based in Tanke, Ilorin, Kwara State. No fixed physical studio—we bring clean lighting and creative direction directly to your location.
             </p>
           </div>
 
           {/* Pages */}
           <div className="md:col-span-3 space-y-3">
-            <h2 className="font-sans text-xs font-semibold uppercase tracking-[0.16em] text-[#C9A24B]">
+            <h2 className="font-sans text-xs font-semibold uppercase tracking-[0.16em] text-[#2E0854]">
               Pages
             </h2>
             <ul className="space-y-2.5 text-sm">
@@ -45,7 +45,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
                   <a
                     href={item.path}
                     onClick={(e) => handleLink(e, item.path)}
-                    className="text-[#F5F1EA]/75 transition-colors hover:text-[#C9A24B]"
+                    className="text-[#130521]/80 transition-colors hover:text-[#2E0854] hover:underline"
                   >
                     {item.label}
                   </a>
@@ -56,17 +56,17 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
 
           {/* Contact & Hours */}
           <div className="md:col-span-4 space-y-3">
-            <h2 className="font-sans text-xs font-semibold uppercase tracking-[0.16em] text-[#C9A24B]">
+            <h2 className="font-sans text-xs font-semibold uppercase tracking-[0.16em] text-[#2E0854]">
               Contact &amp; Hours
             </h2>
-            <ul className="space-y-2 text-sm text-[#F5F1EA]/75">
+            <ul className="space-y-2 text-sm text-[#130521]/80">
               <li>Tanke, Ilorin, Nigeria</li>
               <li>{BUSINESS_INFO.hours}</li>
               <li>
                 Phone:{' '}
                 <a
                   href={`tel:+234${BUSINESS_INFO.phoneDisplay.slice(1)}`}
-                  className="text-[#F5F1EA] hover:text-[#C9A24B] tabular-nums"
+                  className="font-medium text-[#130521] hover:text-[#2E0854] hover:underline tabular-nums"
                 >
                   {BUSINESS_INFO.phoneDisplay}
                 </a>
@@ -77,7 +77,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
                   href={buildWhatsAppUrl(BUSINESS_INFO.floatingWhatsappMessage)}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-[#C9A24B] hover:underline"
+                  className="font-semibold text-[#2E0854] underline-offset-2 hover:underline"
                 >
                   Chat on WhatsApp
                 </a>
@@ -86,20 +86,20 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
                 Email:{' '}
                 <a
                   href={`mailto:${BUSINESS_INFO.email}`}
-                  className="text-[#F5F1EA] hover:text-[#C9A24B] break-all"
+                  className="font-medium text-[#130521] hover:text-[#2E0854] hover:underline break-all"
                 >
                   {BUSINESS_INFO.email}
                 </a>
               </li>
             </ul>
 
-            <div className="pt-2 flex items-center gap-5 text-xs font-medium text-[#F5F1EA]/65">
+            <div className="pt-2 flex items-center gap-4 text-xs font-medium text-[#130521]/65">
               {/* TODO: add Instagram handle */}
               <a
                 href={BUSINESS_INFO.instagramUrl}
                 aria-label="Instagram (handle coming soon)"
                 title="Instagram handle coming soon"
-                className="transition-colors hover:text-[#C9A24B]"
+                className="transition-colors hover:text-[#2E0854]"
               >
                 Instagram (Soon)
               </a>
@@ -109,7 +109,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
                 href={BUSINESS_INFO.tiktokUrl}
                 aria-label="TikTok (handle coming soon)"
                 title="TikTok handle coming soon"
-                className="transition-colors hover:text-[#C9A24B]"
+                className="transition-colors hover:text-[#2E0854]"
               >
                 TikTok (Soon)
               </a>
@@ -117,7 +117,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
           </div>
         </div>
 
-        <div className="mt-12 flex flex-col gap-3 border-t border-[#F5F1EA]/10 pt-6 text-xs text-[#F5F1EA]/55 sm:flex-row sm:items-center sm:justify-between">
+        <div className="mt-12 flex flex-col gap-3 border-t border-[#130521]/12 pt-6 text-xs text-[#130521]/65 sm:flex-row sm:items-center sm:justify-between">
           <p>
             &copy; {new Date().getFullYear()} {BUSINESS_INFO.name}. All rights reserved.
           </p>

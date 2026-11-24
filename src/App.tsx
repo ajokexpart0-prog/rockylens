@@ -122,10 +122,10 @@ export default function App() {
   }, [route]);
 
   return (
-    <div className="flex min-h-screen flex-col bg-[#0B0B0C] text-[#F5F1EA]">
+    <div className="flex min-h-screen flex-col bg-white text-[#130521]">
       <a
         href="#main-content"
-        className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:rounded-lg focus:bg-[#C9A24B] focus:px-4 focus:py-2 focus:text-xs focus:font-semibold focus:text-[#0B0B0C]"
+        className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:rounded-lg focus:bg-[#2E0854] focus:px-4 focus:py-2 focus:text-xs focus:font-semibold focus:text-white"
       >
         Skip to main content
       </a>

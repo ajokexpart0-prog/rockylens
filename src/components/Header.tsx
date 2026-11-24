@@ -33,7 +33,7 @@ export const Header: React.FC<HeaderProps> = ({ currentRoute, onNavigate }) => {
   const navLinks = NAV_ITEMS.filter((item) => item.path !== '/book');
 
   return (
-    <header className="sticky top-0 z-40 border-b border-[#F5F1EA]/10 bg-[#0B0B0C]/92 backdrop-blur-md">
+    <header className="sticky top-0 z-40 border-b border-[#130521]/10 bg-white/95 backdrop-blur-md">
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-8 px-4 sm:px-6 lg:px-8">
         {/* Zone 1: Single-line brand mark */}
         <a
@@ -60,15 +60,15 @@ export const Header: React.FC<HeaderProps> = ({ currentRoute, onNavigate }) => {
                 aria-current={active ? 'page' : undefined}
                 className={`relative py-1 whitespace-nowrap shrink-0 transition-colors duration-150 ${
                   active
-                    ? 'text-[#C9A24B]'
-                    : 'text-[#F5F1EA]/80 hover:text-[#F5F1EA]'
+                    ? 'font-semibold text-[#2E0854]'
+                    : 'text-[#130521]/75 hover:text-[#2E0854]'
                 }`}
               >
                 {item.label}
                 {active && (
                   <span
                     aria-hidden="true"
-                    className="absolute inset-x-0 -bottom-0.5 h-px bg-[#C9A24B]"
+                    className="absolute inset-x-0 -bottom-0.5 h-0.5 rounded-full bg-[#2E0854]"
                   />
                 )}
               </a>
@@ -81,7 +81,7 @@ export const Header: React.FC<HeaderProps> = ({ currentRoute, onNavigate }) => {
           <a
             href="/book"
             onClick={(e) => handleLinkClick(e, '/book')}
-            className="hidden md:inline-flex items-center justify-center rounded-lg bg-[#C9A24B] px-4 py-2 text-xs font-semibold uppercase tracking-wider text-[#0B0B0C] transition-opacity duration-150 hover:opacity-90 whitespace-nowrap shrink-0"
+            className="hidden md:inline-flex items-center justify-center rounded-lg bg-[#2E0854] px-4 py-2 text-xs font-semibold uppercase tracking-wider text-white shadow-xs transition-colors duration-150 hover:bg-[#1E043B] whitespace-nowrap shrink-0"
           >
             Book a Shoot
           </a>
@@ -89,7 +89,7 @@ export const Header: React.FC<HeaderProps> = ({ currentRoute, onNavigate }) => {
           <button
             type="button"
             onClick={() => setMenuOpen((prev) => !prev)}
-            className="inline-flex h-11 w-11 items-center justify-center rounded-lg border border-[#F5F1EA]/15 text-[#F5F1EA] transition-colors hover:border-[#C9A24B] hover:text-[#C9A24B] md:hidden"
+            className="inline-flex h-11 w-11 items-center justify-center rounded-lg border border-[#130521]/15 bg-[#F0E9F8] text-[#130521] transition-colors hover:border-[#2E0854] hover:text-[#2E0854] md:hidden"
             aria-label={menuOpen ? 'Close navigation menu' : 'Open navigation menu'}
             aria-expanded={menuOpen}
             aria-controls="mobile-nav-drawer"
@@ -104,9 +104,9 @@ export const Header: React.FC<HeaderProps> = ({ currentRoute, onNavigate }) => {
         <nav
           id="mobile-nav-drawer"
           aria-label="Mobile navigation"
-          className="border-t border-[#F5F1EA]/10 bg-[#0B0B0C] px-4 py-4 md:hidden"
+          className="border-t border-[#130521]/10 bg-white px-4 py-4 md:hidden"
         >
-          <div className="flex flex-col gap-1">
+          <div className="flex flex-col gap-1.5">
             {NAV_ITEMS.map((item) => {
               const active = currentRoute === item.path;
               const isBook = item.path === '/book';
@@ -118,10 +118,10 @@ export const Header: React.FC<HeaderProps> = ({ currentRoute, onNavigate }) => {
                   aria-current={active ? 'page' : undefined}
                   className={`flex min-h-[44px] items-center justify-between rounded-lg px-4 py-2.5 text-sm font-medium transition-colors ${
                     isBook
-                      ? 'mt-2 justify-center bg-[#C9A24B] font-semibold text-[#0B0B0C]'
+                      ? 'mt-2 justify-center bg-[#2E0854] font-semibold text-white'
                       : active
-                        ? 'bg-[#1A1A1D] text-[#C9A24B]'
-                        : 'text-[#F5F1EA]/85 hover:bg-[#1A1A1D]'
+                        ? 'bg-[#F0E9F8] font-semibold text-[#2E0854]'
+                        : 'text-[#130521]/85 hover:bg-[#F0E9F8]'
                   }`}
                 >
                   <span>{item.label}</span>

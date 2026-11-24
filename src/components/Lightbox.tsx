@@ -68,7 +68,7 @@ export const Lightbox: React.FC<LightboxProps> = ({
       role="dialog"
       aria-modal="true"
       aria-label={activeItem.caption}
-      className="fixed inset-0 z-50 flex flex-col justify-between bg-[#0B0B0C]/95 p-4 backdrop-blur-sm sm:p-6"
+      className="fixed inset-0 z-50 flex flex-col justify-between bg-white/96 p-4 backdrop-blur-md sm:p-6"
       onClick={onClose}
       onTouchStart={handleTouchStart}
       onTouchEnd={handleTouchEnd}
@@ -78,8 +78,8 @@ export const Lightbox: React.FC<LightboxProps> = ({
         className="mx-auto flex w-full max-w-6xl items-center justify-between gap-4"
         onClick={(e) => e.stopPropagation()}
       >
-        <div className="flex items-center gap-2 text-xs text-[#F5F1EA]/70">
-          <span className="text-[#C9A24B] font-medium">{activeItem.group}</span>
+        <div className="flex items-center gap-2 text-xs text-[#130521]/75">
+          <span className="font-semibold text-[#2E0854]">{activeItem.group}</span>
           {activeItem.subGroup && (
             <>
               <span aria-hidden="true">·</span>
@@ -96,7 +96,7 @@ export const Lightbox: React.FC<LightboxProps> = ({
           type="button"
           onClick={onClose}
           aria-label="Close lightbox"
-          className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-[#F5F1EA]/20 bg-[#1A1A1D] text-[#F5F1EA] transition-colors hover:border-[#C9A24B] hover:text-[#C9A24B]"
+          className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-[#130521]/15 bg-[#F0E9F8] text-[#130521] transition-colors hover:border-[#2E0854] hover:bg-[#2E0854] hover:text-white"
         >
           <X className="h-5 w-5" />
         </button>
@@ -104,7 +104,7 @@ export const Lightbox: React.FC<LightboxProps> = ({
 
       {/* Center media */}
       <div
-        className="relative mx-auto flex my-auto max-h-[75vh] w-full max-w-5xl items-center justify-center"
+        className="relative mx-auto my-auto flex max-h-[75vh] w-full max-w-5xl items-center justify-center"
         onClick={(e) => e.stopPropagation()}
       >
         {items.length > 1 && (
@@ -112,7 +112,7 @@ export const Lightbox: React.FC<LightboxProps> = ({
             type="button"
             onClick={goPrev}
             aria-label="Previous image"
-            className="absolute left-2 z-10 inline-flex h-11 w-11 items-center justify-center rounded-full border border-[#F5F1EA]/20 bg-[#0B0B0C]/80 text-[#F5F1EA] transition-colors hover:border-[#C9A24B] hover:text-[#C9A24B] sm:left-4"
+            className="absolute left-2 z-10 inline-flex h-11 w-11 items-center justify-center rounded-full border border-[#130521]/15 bg-[#F0E9F8]/95 text-[#130521] shadow-sm transition-colors hover:border-[#2E0854] hover:bg-[#2E0854] hover:text-white sm:left-4"
           >
             <ChevronLeft className="h-5 w-5" />
           </button>
@@ -123,12 +123,12 @@ export const Lightbox: React.FC<LightboxProps> = ({
             src={activeItem.src}
             alt={activeItem.alt}
             referrerPolicy="no-referrer"
-            className="max-h-[72vh] w-auto max-w-full rounded-lg object-contain shadow-2xl"
+            className="max-h-[72vh] w-auto max-w-full rounded-xl border border-[#130521]/10 bg-[#F0E9F8] object-contain shadow-xl"
           />
         ) : (
-          <div className="flex h-72 w-full max-w-xl flex-col items-center justify-center rounded-xl border border-[#F5F1EA]/15 bg-[#1A1A1D] p-8 text-center">
-            <p className="font-display text-2xl text-[#F5F1EA]">Photo coming soon</p>
-            <p className="mt-2 text-sm text-[#F5F1EA]/70">{activeItem.caption}</p>
+          <div className="flex h-72 w-full max-w-xl flex-col items-center justify-center rounded-xl border border-[#130521]/15 bg-[#F0E9F8] p-8 text-center">
+            <p className="font-display text-2xl text-[#130521]">Photo coming soon</p>
+            <p className="mt-2 text-sm text-[#130521]/70">{activeItem.caption}</p>
           </div>
         )}
 
@@ -137,7 +137,7 @@ export const Lightbox: React.FC<LightboxProps> = ({
             type="button"
             onClick={goNext}
             aria-label="Next image"
-            className="absolute right-2 z-10 inline-flex h-11 w-11 items-center justify-center rounded-full border border-[#F5F1EA]/20 bg-[#0B0B0C]/80 text-[#F5F1EA] transition-colors hover:border-[#C9A24B] hover:text-[#C9A24B] sm:right-4"
+            className="absolute right-2 z-10 inline-flex h-11 w-11 items-center justify-center rounded-full border border-[#130521]/15 bg-[#F0E9F8]/95 text-[#130521] shadow-sm transition-colors hover:border-[#2E0854] hover:bg-[#2E0854] hover:text-white sm:right-4"
           >
             <ChevronRight className="h-5 w-5" />
           </button>
@@ -149,10 +149,10 @@ export const Lightbox: React.FC<LightboxProps> = ({
         className="mx-auto w-full max-w-3xl text-center"
         onClick={(e) => e.stopPropagation()}
       >
-        <p className="font-display text-lg text-[#F5F1EA] sm:text-xl">
+        <p className="font-display text-lg font-medium text-[#130521] sm:text-xl">
           {activeItem.caption}
         </p>
-        <p className="mt-1 text-xs text-[#F5F1EA]/60">
+        <p className="mt-1 text-xs text-[#130521]/65">
           Swipe or use arrow keys to browse · Esc to close
         </p>
       </div>

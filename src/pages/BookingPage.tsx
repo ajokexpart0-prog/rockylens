@@ -125,7 +125,6 @@ export const BookingPage: React.FC<BookingPageProps> = ({ initialQuery }) => {
       });
 
       if (response.ok || response.status === 404 || response.status === 405) {
-        // Redirect to thank-you.html on Netlify (and in local preview)
         window.location.assign('/thank-you.html');
       } else {
         setSubmitError(
@@ -164,38 +163,38 @@ export const BookingPage: React.FC<BookingPageProps> = ({ initialQuery }) => {
           {/* Left column: context & quick facts */}
           <div className="space-y-8 lg:col-span-5">
             <div>
-              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#C9A24B]">
+              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#2E0854]">
                 Book a Shoot
               </p>
-              <h1 className="mt-3 font-display text-4xl font-semibold text-[#F5F1EA] sm:text-5xl text-balance">
+              <h1 className="mt-3 font-display text-4xl font-semibold text-[#130521] sm:text-5xl text-balance">
                 Send your enquiry or book on WhatsApp.
               </h1>
-              <p className="mt-4 text-sm leading-relaxed text-[#F5F1EA]/75 sm:text-base">
+              <p className="mt-4 text-sm leading-relaxed text-[#130521]/75 sm:text-base">
                 Tell us what you are planning, where in Ilorin (or beyond) you want to shoot, and your preferred date. We confirm availability and send deposit details straight away.
               </p>
             </div>
 
-            <div className="rounded-xl border border-[#F5F1EA]/12 bg-[#1A1A1D] p-6 space-y-4">
-              <h2 className="font-display text-xl font-semibold text-[#F5F1EA]">
+            <div className="space-y-4 rounded-xl border border-[#130521]/12 bg-[#F0E9F8] p-6">
+              <h2 className="font-display text-xl font-semibold text-[#130521]">
                 Booking Essentials
               </h2>
-              <ul className="space-y-3 text-xs leading-relaxed text-[#F5F1EA]/75 sm:text-sm">
+              <ul className="space-y-3 text-xs leading-relaxed text-[#130521]/80 sm:text-sm">
                 <li>
-                  <strong className="text-[#F5F1EA]">Base Area:</strong>{' '}
+                  <strong className="text-[#130521]">Base Area:</strong>{' '}
                   {BUSINESS_INFO.fullRegion} (on-location service, no physical studio).
                 </li>
                 <li>
-                  <strong className="text-[#F5F1EA]">Travel:</strong> Affordable standard rates with no travel fee in Ilorin. Outside Ilorin travel fee is quoted on WhatsApp.
+                  <strong className="text-[#130521]">Travel:</strong> Affordable standard rates with no travel fee in Ilorin. Outside Ilorin travel fee is quoted on WhatsApp.
                 </li>
                 <li>
-                  <strong className="text-[#F5F1EA]">Deposit:</strong> 50% deposit confirms your date; balance due before final delivery.
+                  <strong className="text-[#130521]">Deposit:</strong> 50% deposit confirms your date; balance due before final delivery.
                 </li>
                 <li>
-                  <strong className="text-[#F5F1EA]">Hours:</strong> {BUSINESS_INFO.hours}.
+                  <strong className="text-[#130521]">Hours:</strong> {BUSINESS_INFO.hours}.
                 </li>
                 <li>
-                  <strong className="text-[#F5F1EA]">Phone / WhatsApp:</strong>{' '}
-                  <span className="tabular-nums text-[#C9A24B]">
+                  <strong className="text-[#130521]">Phone / WhatsApp:</strong>{' '}
+                  <span className="font-semibold text-[#2E0854] tabular-nums">
                     {BUSINESS_INFO.phoneDisplay}
                   </span>
                 </li>
@@ -213,7 +212,7 @@ export const BookingPage: React.FC<BookingPageProps> = ({ initialQuery }) => {
               action="/thank-you.html"
               onSubmit={handleSubmit}
               noValidate
-              className="rounded-2xl border border-[#F5F1EA]/12 bg-[#1A1A1D] p-6 sm:p-8 space-y-5"
+              className="space-y-5 rounded-2xl border border-[#130521]/12 bg-[#F0E9F8] p-6 sm:p-8"
             >
               {/* Netlify required hidden inputs */}
               <input type="hidden" name="form-name" value="booking-enquiry" />
@@ -229,9 +228,9 @@ export const BookingPage: React.FC<BookingPageProps> = ({ initialQuery }) => {
                 <div>
                   <label
                     htmlFor="full-name"
-                    className="block text-xs font-semibold uppercase tracking-wider text-[#F5F1EA]/80"
+                    className="block text-xs font-semibold uppercase tracking-wider text-[#130521]/80"
                   >
-                    Full name <span className="text-[#C9A24B]">*</span>
+                    Full name <span className="text-[#2E0854]">*</span>
                   </label>
                   <input
                     id="full-name"
@@ -243,10 +242,10 @@ export const BookingPage: React.FC<BookingPageProps> = ({ initialQuery }) => {
                     aria-invalid={Boolean(errors.fullName)}
                     aria-describedby={errors.fullName ? 'full-name-error' : undefined}
                     placeholder="Your full name"
-                    className="mt-2 h-11 w-full rounded-lg border border-[#F5F1EA]/20 bg-[#0B0B0C] px-3.5 text-sm text-[#F5F1EA] placeholder:text-[#F5F1EA]/35 focus:border-[#C9A24B] focus:outline-none"
+                    className="mt-2 h-11 w-full rounded-lg border border-[#130521]/20 bg-white px-3.5 text-sm text-[#130521] placeholder:text-[#130521]/40 focus:border-[#2E0854] focus:outline-none"
                   />
                   {errors.fullName && (
-                    <p id="full-name-error" className="mt-1.5 text-xs text-red-400">
+                    <p id="full-name-error" className="mt-1.5 text-xs font-medium text-red-700">
                       {errors.fullName}
                     </p>
                   )}
@@ -256,9 +255,9 @@ export const BookingPage: React.FC<BookingPageProps> = ({ initialQuery }) => {
                 <div>
                   <label
                     htmlFor="email"
-                    className="block text-xs font-semibold uppercase tracking-wider text-[#F5F1EA]/80"
+                    className="block text-xs font-semibold uppercase tracking-wider text-[#130521]/80"
                   >
-                    Email <span className="text-[#C9A24B]">*</span>
+                    Email <span className="text-[#2E0854]">*</span>
                   </label>
                   <input
                     id="email"
@@ -270,10 +269,10 @@ export const BookingPage: React.FC<BookingPageProps> = ({ initialQuery }) => {
                     aria-invalid={Boolean(errors.email)}
                     aria-describedby={errors.email ? 'email-error' : undefined}
                     placeholder="you@example.com"
-                    className="mt-2 h-11 w-full rounded-lg border border-[#F5F1EA]/20 bg-[#0B0B0C] px-3.5 text-sm text-[#F5F1EA] placeholder:text-[#F5F1EA]/35 focus:border-[#C9A24B] focus:outline-none"
+                    className="mt-2 h-11 w-full rounded-lg border border-[#130521]/20 bg-white px-3.5 text-sm text-[#130521] placeholder:text-[#130521]/40 focus:border-[#2E0854] focus:outline-none"
                   />
                   {errors.email && (
-                    <p id="email-error" className="mt-1.5 text-xs text-red-400">
+                    <p id="email-error" className="mt-1.5 text-xs font-medium text-red-700">
                       {errors.email}
                     </p>
                   )}
@@ -285,9 +284,9 @@ export const BookingPage: React.FC<BookingPageProps> = ({ initialQuery }) => {
                 <div>
                   <label
                     htmlFor="phone"
-                    className="block text-xs font-semibold uppercase tracking-wider text-[#F5F1EA]/80"
+                    className="block text-xs font-semibold uppercase tracking-wider text-[#130521]/80"
                   >
-                    Phone / WhatsApp <span className="text-[#F5F1EA]/45">(optional)</span>
+                    Phone / WhatsApp <span className="text-[#130521]/50">(optional)</span>
                   </label>
                   <input
                     id="phone"
@@ -296,7 +295,7 @@ export const BookingPage: React.FC<BookingPageProps> = ({ initialQuery }) => {
                     value={values.phone}
                     onChange={(e) => handleFieldChange('phone', e.target.value)}
                     placeholder="e.g. 08012345678"
-                    className="mt-2 h-11 w-full rounded-lg border border-[#F5F1EA]/20 bg-[#0B0B0C] px-3.5 text-sm text-[#F5F1EA] placeholder:text-[#F5F1EA]/35 focus:border-[#C9A24B] focus:outline-none"
+                    className="mt-2 h-11 w-full rounded-lg border border-[#130521]/20 bg-white px-3.5 text-sm text-[#130521] placeholder:text-[#130521]/40 focus:border-[#2E0854] focus:outline-none"
                   />
                 </div>
 
@@ -304,9 +303,9 @@ export const BookingPage: React.FC<BookingPageProps> = ({ initialQuery }) => {
                 <div>
                   <label
                     htmlFor="service"
-                    className="block text-xs font-semibold uppercase tracking-wider text-[#F5F1EA]/80"
+                    className="block text-xs font-semibold uppercase tracking-wider text-[#130521]/80"
                   >
-                    Service <span className="text-[#C9A24B]">*</span>
+                    Service <span className="text-[#2E0854]">*</span>
                   </label>
                   <select
                     id="service"
@@ -318,14 +317,14 @@ export const BookingPage: React.FC<BookingPageProps> = ({ initialQuery }) => {
                     }
                     aria-invalid={Boolean(errors.service)}
                     aria-describedby={errors.service ? 'service-error' : undefined}
-                    className="mt-2 h-11 w-full rounded-lg border border-[#F5F1EA]/20 bg-[#0B0B0C] px-3.5 text-sm text-[#F5F1EA] focus:border-[#C9A24B] focus:outline-none"
+                    className="mt-2 h-11 w-full rounded-lg border border-[#130521]/20 bg-white px-3.5 text-sm text-[#130521] focus:border-[#2E0854] focus:outline-none"
                   >
                     <option value="Portrait Photography">Portrait Photography</option>
                     <option value="Product Photography">Product Photography</option>
                     <option value="Event Photography">Event Photography</option>
                   </select>
                   {errors.service && (
-                    <p id="service-error" className="mt-1.5 text-xs text-red-400">
+                    <p id="service-error" className="mt-1.5 text-xs font-medium text-red-700">
                       {errors.service}
                     </p>
                   )}
@@ -336,7 +335,7 @@ export const BookingPage: React.FC<BookingPageProps> = ({ initialQuery }) => {
               <div>
                 <label
                   htmlFor="package-quantity"
-                  className="block text-xs font-semibold uppercase tracking-wider text-[#F5F1EA]/80"
+                  className="block text-xs font-semibold uppercase tracking-wider text-[#130521]/80"
                 >
                   Package / quantity
                 </label>
@@ -347,7 +346,7 @@ export const BookingPage: React.FC<BookingPageProps> = ({ initialQuery }) => {
                   value={values.packageQuantity}
                   onChange={(e) => handleFieldChange('packageQuantity', e.target.value)}
                   placeholder="e.g. Growth (15 products) or Professional Portrait (1 session)"
-                  className="mt-2 h-11 w-full rounded-lg border border-[#F5F1EA]/20 bg-[#0B0B0C] px-3.5 text-sm text-[#F5F1EA] placeholder:text-[#F5F1EA]/35 focus:border-[#C9A24B] focus:outline-none"
+                  className="mt-2 h-11 w-full rounded-lg border border-[#130521]/20 bg-white px-3.5 text-sm text-[#130521] placeholder:text-[#130521]/40 focus:border-[#2E0854] focus:outline-none"
                 />
               </div>
 
@@ -356,9 +355,9 @@ export const BookingPage: React.FC<BookingPageProps> = ({ initialQuery }) => {
                 <div>
                   <label
                     htmlFor="preferred-date"
-                    className="block text-xs font-semibold uppercase tracking-wider text-[#F5F1EA]/80"
+                    className="block text-xs font-semibold uppercase tracking-wider text-[#130521]/80"
                   >
-                    Preferred date <span className="text-[#C9A24B]">*</span>
+                    Preferred date <span className="text-[#2E0854]">*</span>
                   </label>
                   <input
                     id="preferred-date"
@@ -371,10 +370,13 @@ export const BookingPage: React.FC<BookingPageProps> = ({ initialQuery }) => {
                     aria-describedby={
                       errors.preferredDate ? 'preferred-date-error' : undefined
                     }
-                    className="mt-2 h-11 w-full rounded-lg border border-[#F5F1EA]/20 bg-[#0B0B0C] px-3.5 text-sm text-[#F5F1EA] focus:border-[#C9A24B] focus:outline-none"
+                    className="mt-2 h-11 w-full rounded-lg border border-[#130521]/20 bg-white px-3.5 text-sm text-[#130521] focus:border-[#2E0854] focus:outline-none"
                   />
                   {errors.preferredDate && (
-                    <p id="preferred-date-error" className="mt-1.5 text-xs text-red-400">
+                    <p
+                      id="preferred-date-error"
+                      className="mt-1.5 text-xs font-medium text-red-700"
+                    >
                       {errors.preferredDate}
                     </p>
                   )}
@@ -384,9 +386,9 @@ export const BookingPage: React.FC<BookingPageProps> = ({ initialQuery }) => {
                 <div>
                   <label
                     htmlFor="shoot-location"
-                    className="block text-xs font-semibold uppercase tracking-wider text-[#F5F1EA]/80"
+                    className="block text-xs font-semibold uppercase tracking-wider text-[#130521]/80"
                   >
-                    Shoot location <span className="text-[#C9A24B]">*</span>
+                    Shoot location <span className="text-[#2E0854]">*</span>
                   </label>
                   <input
                     id="shoot-location"
@@ -400,10 +402,13 @@ export const BookingPage: React.FC<BookingPageProps> = ({ initialQuery }) => {
                       errors.shootLocation ? 'shoot-location-error' : undefined
                     }
                     placeholder="e.g. Tanke, GRA Ilorin, or venue name"
-                    className="mt-2 h-11 w-full rounded-lg border border-[#F5F1EA]/20 bg-[#0B0B0C] px-3.5 text-sm text-[#F5F1EA] placeholder:text-[#F5F1EA]/35 focus:border-[#C9A24B] focus:outline-none"
+                    className="mt-2 h-11 w-full rounded-lg border border-[#130521]/20 bg-white px-3.5 text-sm text-[#130521] placeholder:text-[#130521]/40 focus:border-[#2E0854] focus:outline-none"
                   />
                   {errors.shootLocation && (
-                    <p id="shoot-location-error" className="mt-1.5 text-xs text-red-400">
+                    <p
+                      id="shoot-location-error"
+                      className="mt-1.5 text-xs font-medium text-red-700"
+                    >
                       {errors.shootLocation}
                     </p>
                   )}
@@ -414,9 +419,9 @@ export const BookingPage: React.FC<BookingPageProps> = ({ initialQuery }) => {
               <div>
                 <label
                   htmlFor="project-details"
-                  className="block text-xs font-semibold uppercase tracking-wider text-[#F5F1EA]/80"
+                  className="block text-xs font-semibold uppercase tracking-wider text-[#130521]/80"
                 >
-                  Project details <span className="text-[#C9A24B]">*</span>
+                  Project details <span className="text-[#2E0854]">*</span>
                 </label>
                 <textarea
                   id="project-details"
@@ -430,10 +435,13 @@ export const BookingPage: React.FC<BookingPageProps> = ({ initialQuery }) => {
                     errors.projectDetails ? 'project-details-error' : undefined
                   }
                   placeholder="Share outfits, product types, event timings, or any special requests."
-                  className="mt-2 w-full rounded-lg border border-[#F5F1EA]/20 bg-[#0B0B0C] px-3.5 py-3 text-sm text-[#F5F1EA] placeholder:text-[#F5F1EA]/35 focus:border-[#C9A24B] focus:outline-none"
+                  className="mt-2 w-full rounded-lg border border-[#130521]/20 bg-white px-3.5 py-3 text-sm text-[#130521] placeholder:text-[#130521]/40 focus:border-[#2E0854] focus:outline-none"
                 />
                 {errors.projectDetails && (
-                  <p id="project-details-error" className="mt-1.5 text-xs text-red-400">
+                  <p
+                    id="project-details-error"
+                    className="mt-1.5 text-xs font-medium text-red-700"
+                  >
                     {errors.projectDetails}
                   </p>
                 )}
@@ -442,7 +450,7 @@ export const BookingPage: React.FC<BookingPageProps> = ({ initialQuery }) => {
               {submitError && (
                 <div
                   role="alert"
-                  className="rounded-lg border border-red-400/40 bg-red-950/40 px-4 py-3 text-xs text-red-200"
+                  className="rounded-lg border border-red-600/35 bg-red-100 px-4 py-3 text-xs font-medium text-red-900"
                 >
                   {submitError}
                 </div>
@@ -452,7 +460,7 @@ export const BookingPage: React.FC<BookingPageProps> = ({ initialQuery }) => {
                 <button
                   type="submit"
                   disabled={submitting}
-                  className="inline-flex min-h-[48px] flex-1 items-center justify-center gap-2 rounded-lg bg-[#C9A24B] px-6 py-3 text-sm font-semibold text-[#0B0B0C] transition-opacity hover:opacity-90 disabled:opacity-60"
+                  className="inline-flex min-h-[48px] flex-1 items-center justify-center gap-2 rounded-lg bg-[#2E0854] px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-[#1E043B] disabled:opacity-60"
                 >
                   <Send className="h-4 w-4" aria-hidden="true" />
                   {submitting ? 'Sending Enquiry...' : 'Submit Booking Enquiry'}
@@ -462,9 +470,9 @@ export const BookingPage: React.FC<BookingPageProps> = ({ initialQuery }) => {
                   href={buildBookingWhatsAppUrl()}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex min-h-[48px] items-center justify-center gap-2 rounded-lg border border-[#F5F1EA]/25 px-5 py-3 text-sm font-semibold text-[#F5F1EA] transition-colors hover:border-[#C9A24B] hover:text-[#C9A24B] whitespace-nowrap"
+                  className="inline-flex min-h-[48px] items-center justify-center gap-2 rounded-lg border border-[#130521]/20 bg-white px-5 py-3 text-sm font-semibold text-[#130521] transition-colors hover:border-[#2E0854] hover:text-[#2E0854] whitespace-nowrap"
                 >
-                  <MessageCircle className="h-4 w-4 text-[#C9A24B]" aria-hidden="true" />
+                  <MessageCircle className="h-4 w-4 text-[#2E0854]" aria-hidden="true" />
                   Or send this on WhatsApp
                 </a>
               </div>
