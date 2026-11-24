@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { ArrowRight, MessageCircle } from 'lucide-react';
 import {
+  ALL_REAL_PORTFOLIO_IMAGES,
   HERO_ACCENT_IMAGE,
   HERO_PRIMARY_IMAGE,
   HERO_SECONDARY_IMAGE,
-  HOME_SELECTED_WORK,
   PortfolioItem,
 } from '../data/portfolio';
 import {
@@ -53,7 +53,7 @@ const SERVICE_CARDS = [
 
 export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
-  const selectedPhotos: PortfolioItem[] = HOME_SELECTED_WORK;
+  const selectedPhotos: PortfolioItem[] = ALL_REAL_PORTFOLIO_IMAGES;
 
   return (
     <div>
@@ -246,7 +246,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
         </div>
       </section>
 
-      {/* Selected Work (6 images) */}
+      {/* Full Gallery Showcase (all uploaded photos) */}
       <section
         className="border-y border-[#130521]/10 bg-[#F0E9F8]/60 py-20 sm:py-24"
         aria-labelledby="selected-work-heading"
@@ -255,13 +255,13 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
           <div className="mb-12 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
             <div>
               <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#2E0854]">
-                Selected Work
+                Our Work · {selectedPhotos.length} Frames
               </p>
               <h2
                 id="selected-work-heading"
                 className="mt-2 font-display text-3xl font-semibold tracking-tight text-[#130521] sm:text-4xl text-balance"
               >
-                Recent frames from portraits, details, and celebrations
+                Portraits, details, and celebrations from our collection
               </h2>
             </div>
             <button
@@ -269,7 +269,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
               onClick={() => onNavigate('/portfolio')}
               className="inline-flex min-h-[44px] items-center gap-2 self-start rounded-lg border border-[#130521]/20 bg-white px-4 py-2 text-sm font-semibold text-[#130521] transition-colors hover:border-[#2E0854] hover:text-[#2E0854] whitespace-nowrap"
             >
-              View All Portfolio
+              Filter by Category
               <ArrowRight className="h-4 w-4" aria-hidden="true" />
             </button>
           </div>

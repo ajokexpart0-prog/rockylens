@@ -294,6 +294,9 @@ export const PORTFOLIO_ITEMS: PortfolioItem[] = [
 ];
 
 export const HOME_SELECTED_WORK = PORTFOLIO_ITEMS.filter((item) => item.featuredOnHome);
+export const ALL_REAL_PORTFOLIO_IMAGES = PORTFOLIO_ITEMS.filter(
+  (item) => !item.isPlaceholder && Boolean(item.src)
+);
 export const HERO_PRIMARY_IMAGE = PORTFOLIO_ITEMS.find(
   (item) => item.id === 'portrait-pearl-blazer'
 )!;
